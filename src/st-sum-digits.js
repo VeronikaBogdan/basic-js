@@ -1,20 +1,21 @@
 import { NotImplementedError } from '../extensions/index.js';
-
-/**
- * Given a number, replace this number with
- * the sum of its digits until we get to a one digit number.
- *
- * @param {Number} n
- * @return {Number}
- *
- * @example
- * For 100, the result should be 1 (1 + 0 + 0 = 1)
- * For 91, the result should be 1 (9 + 1 = 10, 1 + 0 = 1)
- *
- */
 export default function getSumOfDigits(n) {
-  // let arr = 'n'.split('');
+	// let n = 123;
+  // let arr = String(n).split('');
+  // console.log(typeof(arr));
+	// console.log(arr);
   // let sum;
+
+
+	// while(arr.length != 1){
+	// 	sum = 0;
+	// 	for(let value in arr){
+	// 		sum += +arr[value];
+	// 		console.log(typeof(+arr[value]));
+	// 	}
+	// }
+
+
   // while(arr.length != 1){
   //   sum = 0;
   //   for(let i = 0; i < arr.length; i++){
@@ -25,5 +26,11 @@ export default function getSumOfDigits(n) {
   // return sum;
 
   throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  //remove line with error and write your code here
 }
+
+// assert.strictEqual(getSumOfDigits(91), 1);
+// assert.strictEqual(getSumOfDigits(100), 1);
+// assert.strictEqual(getSumOfDigits(35), 8);
+// assert.strictEqual(getSumOfDigits(99), 9);
+// assert.strictEqual(getSumOfDigits(123), 6);
