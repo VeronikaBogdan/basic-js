@@ -1,5 +1,3 @@
-//import { NotImplementedError } from '../extensions/index.js';
-
 export default function createDreamTeam(members) {
 	//let members = ['att', 123, 'nn', 'dmitry', 'max'];
 	let arr = [], 
@@ -14,17 +12,13 @@ export default function createDreamTeam(members) {
 		} 
 	}
 	
-// console.log(fl.sort().join(''));
+
 	let q = fl.sort().join('');
 	return q;
-	//return typeof q == 'string' ?  q : false;
+
 } else {
 	return false;
 }
 
 
-
-
-  //throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
 }
