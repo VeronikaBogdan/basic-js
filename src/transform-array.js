@@ -1,4 +1,4 @@
-import { NotImplementedError } from '../extensions/index.js';
+//import { NotImplementedError } from '../extensions/index.js';
 
 /**
  * Create transformed array based on the control sequences that original
@@ -13,7 +13,16 @@ import { NotImplementedError } from '../extensions/index.js';
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
  * 
  */
-export default function transform(/* arr */) {
-  throw new NotImplementedError('Not implemented');
+export default function transform(arr) {
+	//let arr = 4;
+	if (typeof arr != 'array'){
+		return `\'arr\' parameter must be an instance of the Array!`;
+		//console.error(`'arr' parameter must be an instance of the Array!`);
+	} else if (arr == []) {
+		return arr;
+	}
+
+
+  //throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }

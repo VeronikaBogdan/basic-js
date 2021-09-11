@@ -109,6 +109,17 @@ NB! Имя члена команды может содержать **пробе�
 
 `getSeason(springDate)` => `'spring'`
 
+- ###  base requirements
+- returns proper value
+- returns proper value if date is before 1970
+- returns proper value (month index)
+- corretly handles argument absence
+- some pack of tests
+extended requirements
+- throws an error with message "Invalid date!" on invalid argument
+- throws an error with message "Invalid date!" on tricky moment
+- throws an error with message "Invalid date!" on a very tricky moment
+
 Напишите ваш код в `src/what-season.js`.
 
 ---
@@ -158,6 +169,14 @@ NB! Имя члена команды может содержать **пробе�
 `transform([1, 2, 3, '--discard-prev', 4, 5])` => `[1, 2, 4, 5]`
 
 Функция не должна изменять исходный массив. Управляющие последовательности применяются **последовательно, слева направо** к элементам из исходного массива. Управляющие последовательности **не попадают** в преобразованный массив. Управляющие последовательности в исходном массиве не встречаются подряд (не следуют одна за другой). Если около управляющей последовательности **нет элемента**, к которому она может быть применена в исходном массиве, либо он был удален в процессе преобразования массива, **она не делает ничего**. Функция должна выбросить ошибку с сообщением `'arr' parameter must be an instance of the Array!`, если `arr` не является массивом.
+
+- correctly works with an empty array
+- throws an Error with message "'arr' parameter must be an instance of the Array!" if arr is not an instance of the Array
+- doesn't affect simple arrays
+- basic sequence interactions work well
+- advanced sequence interactions work well
+- control sequences work properly
+- doesn't change initial array
 
 Напишите свой код в `src/transform-array.js`.
 
