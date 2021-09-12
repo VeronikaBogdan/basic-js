@@ -1,26 +1,81 @@
 //import { NotImplementedError } from '../extensions/index.js';
 
-/**
- * Create transformed array based on the control sequences that original
- * array contains
- * 
- * @param {Array} arr initial array
- * @returns {Array} transformed array
- * 
- * @example
- * 
- * transform([1, 2, 3, '--double-next', 4, 5]) => [1, 2, 3, 4, 4, 5]
- * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
- * 
- */
 export default function transform(arr) {
-	//let arr = 4;
-	if (typeof arr != 'array'){
-		return `\'arr\' parameter must be an instance of the Array!`;
-		//console.error(`'arr' parameter must be an instance of the Array!`);
-	} else if (arr == []) {
-		return arr;
+	//let arr = [1, 2, 3, ['qwe','aaa'], 4, 5];
+	//let arr = 3;
+	//console.log(Array.isArray(arr));
+
+
+
+	if (Array.isArray(arr)===true){
+		//let arr = [1, 2, '2', 4, 5];
+		let na = [...arr];
+		let k = 0;
+		if (arr.every(i => Number.isInteger(i))) {
+			return arr;
+			console.log(arr);
+		} 
+		else
+		 {
+			 
+			//if(arr.length<3 && arr[0]=='--double-next') return arr;
+
+			if((arr[0]== '--discard-prev' || arr[0]=='--double-prev') && arr.length>2) {arr.shift(); na.shift();}
+			if(arr[arr.length-1]== '--double-next' || arr[arr.length-1]=='--discard-next') {arr.pop();na.pop();}
+
+			for(let i = 0; i < arr.length; i++){     // ТАК ДОЛЖНО БЫТЬ
+				if(arr[i-1]=='--discard-next' && arr[i+1]=='--discard-next') {na=arr; break;}
+
+
+				if(arr[i-1]=='--discard-prev'){
+					na = arr.slice(k,arr[i-3]);
+					k=arr[i]
+					na = [...arr.slice(k,arr.length)]
+				}
+				if(arr[i-1]=='--discard-next'){
+					na = arr.slice(k,arr[i-2]);
+					k=arr[i];
+					na = [...arr.slice(k,arr.length)]
+				}
+				if(arr[i-1]=='--double-next'){
+					arr[i-1] = arr[i];
+					na = arr;
+				}
+				if(arr[i-1]=='--double-prev'){
+					arr[i-1] = arr[i];
+					na = arr;
+				}
+			}
+		/*	for(let i = 0; i < arr.length; i++){     // ТАК ДОЛЖНО БЫТЬ
+				if(arr[i+1]=='--discard-prev'){
+					na = arr.slice(k,arr[i-1]);
+					k=arr[i+2]
+					na = [...na,...arr.slice(k,arr.length)]
+				}
+				if(arr[i+1]=='--discard-next'){
+					na = arr.slice(k,arr[i]);
+					k=arr[i+2];
+					na = [...na,...arr.slice(k,arr.length)]
+				}
+				if(arr[i+1]=='--double-next'){
+					arr[i+1] = arr[i+2];
+					na = [...arr];
+				}
+				if(arr[i+1]=='--double-prev'){
+					arr[i+1] = arr[i];
+					na = [...arr];
+				}
+			}*/
+			console.log(na);
+			return na;
+		}
+	} 
+	else 
+	{		
+		console.log('\'arr\' parameter must be an instance of the Array!');
+		return '\'arr\' parameter must be an instance of the Array!';		
 	}
+
 
 
   //throw new NotImplementedError('Not implemented');

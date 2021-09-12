@@ -1,4 +1,4 @@
-//import { NotImplementedError } from '../extensions/index.js';
+import { NotImplementedError } from '../extensions/index.js';
 
 /**
  * Extract season from given date and expose the enemy scout!
@@ -12,8 +12,18 @@
  * 
  */
 export default function getSeason(date) {
-	//let date = 
+	// const date = {
 
-  //throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+	// };
+	
+
+	//! if(!date) return 'Unable to determine the time of year!';
+	//! if((date instanceof Date) === false) return 'Invalid date!';
+
+  //let date = () => new Date();
+  //console.log(date instanceof Date);
+
+
+  throw new NotImplementedError('Not implemented');
+  //remove line with error and write your code here
 }
