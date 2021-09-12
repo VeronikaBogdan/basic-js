@@ -1,4 +1,7 @@
 export default function repeater(str, options) {
+
+	// const options = { separator: 'ds', addition: 'ADD!', additionSeparator: ')))000' }
+	// console.log(options.repeatTimes);
 	let q = '';
 
 	if(typeof str != 'string') str=str+'' /*options[str] = str*/;
@@ -7,6 +10,7 @@ export default function repeater(str, options) {
 	!options.separator ? options.separator = '+' : options.separator;
 	!options.additionSeparator ? options.additionSeparator = '|': options.additionSeparator ;
 
+	// if(options.repeatTimes === undefined && options.additionRepeatTimes === undefined) q=str+addition ;
 
 	for(let i = 0; i < options.repeatTimes; i++){
 		q += str;
@@ -19,6 +23,8 @@ export default function repeater(str, options) {
 		i==options.repeatTimes-1 ? q  : q += options.separator;
 	}
 
-	return q;
+
+	return options.repeatTimes == undefined &&options.additionRepeatTimes == undefined ? q=str+options.addition:q;
+	// return q;
 	console.log(q);
 }
