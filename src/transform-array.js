@@ -44,8 +44,6 @@ export default function transform(arr) {
 	} 
 	else 
 	{		
-		// console.log('\'arr\' parameter must be an instance of the Array!');
-		// return '\'arr\' parameter must be an instance of the Array!';
 		throw new Error('\'arr\' parameter must be an instance of the Array!')	;	
 	}
 
